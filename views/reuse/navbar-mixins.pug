@@ -1,0 +1,18 @@
+mixin navbar(name)
+    nav.navbar.navbar-default
+        .container
+            .navbar-header
+                a.navbar-brand #{name}
+            .collapse.navbar-collapse
+                ul.nav.navbar-nav
+                    block
+
+mixin navbar-dropdown(name)
+    li.dropdown
+        a(href="#", class="dropdown-toggle", data-toggle="dropdown", role="button") #{name}
+            ul.dropdown-menu
+                block
+
+mixin navbar-link(name, link, active)
+    li(class=active)
+        a(href=link) #{name}

@@ -1,0 +1,9 @@
+extends reuse/frame
+include reuse/article-mixins
+
+block content
+    .panel-group
+        each article in articles
+            +article(article.id, article.title, article.content)
+
+

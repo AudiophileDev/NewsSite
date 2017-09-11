@@ -1,0 +1,27 @@
+[
+  {
+    "id" : 0,
+    "title" : "Doppelschlag bringt Schalke den Sieg gegen Stuttgart!",
+    "content" : "Nach der Flucht seines Weltmeisters Benedikt Höwedes hat Schalke 04 die Gemüter mit dem zweiten Saisonsieg und dem Sprung auf Platz fünf beruhigt. Im ersten Spiel nach dem Weggang des abgesetzten Kapitäns zu Juventus Turin bezwangen die Königsblauen nach schwacher erster Halbzeit den Aufsteiger VfB Stuttgart mit 3:1 (1:1) und ließen Kritik und Pfiffe vorerst verstummen."
+  },
+  {
+    "id" : 1,
+    "title" : "Kreisligafußballer stirbt vor den Augen des Sohnes",
+    "content" : "In der Fußball-Kreisliga B Kassel ist es am Wochenende zu einem tragischen Todesfall gekommen. Im Spiel des TSV Hertingshausen II gegen die TSG Wattenbach II ist ein 56 Jahre alter Spieler der Gästemannschaft auf dem Spielfeld zusammengebrochen und verstorben, dies berichtet die „Hessische Niedersächsische Allgemeine“"
+  },
+  {
+    "id" : 2,
+    "title" : "Teslas großzügige Geste entpuppt sich als riskante Aktion",
+    "content" : "Einige Tesla-Besitzer in Florida dürften am Wochenende ziemlich überrascht gewesen sein, als sie auf die Reichweiten-Anzeige ihres Elektroautos schauten. Plötzlich stand dort bei einer voll geladenen Batterie nicht mehr ein Wert um die 200 Meilen (rund 320 Kilometer), sondern bis zu 240 Meilen (386 Kilometer). Außerdem leuchtete im Display des Autos eine weitere Zahl auf: eine kleine 75. Das Geheimnis hinter der nächtlichen Batterieerweiterung ist eine Marketingaktion von Tesla. Um den von Hurrikan „Irma“ bedrohten E-Auto-Besitzern bei der Evakuierung zu helfen, schaltete das Unternehmen bei den Fahrzeugen in der betroffenen Region kurzerhand die künstliche Beschränkung der Batteriekapazität ab. Nach dem Kauf kostet die Erweiterung 3000 Dollar: Das funktioniert allerdings nur bei einigen Modellen, die 2016 auf den Markt kamen, in denen eine 75-Kilowattstunden-Batterie verbaut wurde, deren Besitzer sich aber für eine geringe Kapazität von nur 60 Kilowattstunden beim Kauf entschieden. Diese Variante der beiden bisherigen Tesla-Modelle S und X war entsprechend günstiger."
+  },
+  {
+    "id" : 3,
+    "title" : "Deutschland muss laut Gutachten Reparationen an Polen zahlen",
+    "content" : "Polen stehen nach einer Expertise des polnischen Parlaments Entschädigungen von Deutschland für die Zerstörungen im Zweiten Weltkrieg zu. Das Gutachten des Sejm wurde am Montag veröffentlicht. Im am Montag veröffentlichten 40-seitigen Gutachten des wissenschaftlichen Dienstes des Sejm (polnisches Unterhaus) heißt es: „Es ist legitim zu sagen, dass die Republik Polen einen Anspruch auf Entschädigungen von der Bundesrepublik Deutschland hat, und die Behauptung, dass die Ansprüche abgelaufen oder verjährt seien, ist unbegründet."
+  },
+  {
+    "id" : 4,
+    "title" : "AfD erfährt Unterstützung von der NPD",
+    "content" : "Führende CDU-Politiker haben nach neuerlichen Berichten über mögliche rassistische Tendenzen innerhalb der Alternative für Deutschland (AfD) zu einer klaren Abgrenzung von der Partei aufgerufen."
+  }
+]
