@@ -1,0 +1,16 @@
+mixin article(id, title, content)
+    .panel.panel-default
+        .panel-heading
+            a(href="/articles/" + id) #{title}
+        .panel-body #{content}
+
+mixin full_article(title, content)
+    .panel.panel-default
+        .panel-heading
+            h1 #{title}
+        .panel-body
+            h5 Text 2 Music
+            audio(controls)
+                source(src="" type="audio/mpeg")
+            .padder
+            p #{content}
