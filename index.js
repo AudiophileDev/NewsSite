@@ -28,6 +28,14 @@ app.get("/api/articles/:id", function(req, res, next){
     res.send(article);
 });
 
+app.get("/playground", function(req, res){
+    res.render("playground");
+});
+
+app.get("/testsound", function(req, res){
+    res.sendFile(__dirname + "/mp3/test.mp3");
+});
+
 app.use(function(req, res){
     res.send("404 Not Found");
 });
