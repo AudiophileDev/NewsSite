@@ -5,7 +5,7 @@ var contentHandler = require("./js/ContentHandler");
 contentHandler = new contentHandler();
 
 var T2M = require("./js/T2M");
-T2M = new T2m();
+T2M = new T2M();
 
 //Init
 var app = express();
@@ -41,14 +41,13 @@ app.get("/playground", function(req, res){
 });
 
 app.post("/playground/submit", function(req, res){
-    var requestOptions = {
-        text : req.body.Text,
-        preciseSearch : req.body.PreciseSearch,
-        optionsDropDown: req.body.OptionsDropDown
-    };
-    //contentHandler._execute("bla");
-    T2M._execute("bla");
-    res.send(JSON.stringify(requestOptions));
+    var requestOptions = T2M.getRequestOptions(req.body);
+    T2M.createSoundFile(requestOptions, function (error, pathToSoundFile) {
+        if(error !== null){
+            return res.send("Error occurred creating sound file: " + error);
+        }
+        return res.send("Created sound file: " + pathToSoundFile);
+    });
 });
 
 app.get("/testsound", function(req, res){

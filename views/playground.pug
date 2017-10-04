@@ -2,6 +2,9 @@ extends reuse/frame
 
 block content
     form(action="/playground/submit" method="post")
+        .from-group
+            label(for="title") Title:
+            input.form-control(type="text" id="title" name="Title")
         .form-group
             label(for="Text") Text:
             textarea(id="Text" class="form-control" rows="10" name="Text")
