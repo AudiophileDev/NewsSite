@@ -4,6 +4,9 @@ var bodyParser = require('body-parser');
 var contentHandler = require("./js/ContentHandler");
 contentHandler = new contentHandler();
 
+var T2M = require("./js/T2M");
+T2M = new T2m();
+
 //Init
 var app = express();
 app.set('view engine', 'pug');
@@ -43,6 +46,8 @@ app.post("/playground/submit", function(req, res){
         preciseSearch : req.body.PreciseSearch,
         optionsDropDown: req.body.OptionsDropDown
     };
+    //contentHandler._execute("bla");
+    T2M._execute("bla");
     res.send(JSON.stringify(requestOptions));
 });
 
