@@ -1,11 +1,16 @@
 "use strict";
 var express = require('express');
+var bodyParser = require('body-parser');
 var contentHandler = require("./js/ContentHandler");
 contentHandler = new contentHandler();
 
 //Init
 var app = express();
 app.set('view engine', 'pug');
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+    extended: true
+}));
 
 
 //Routing
@@ -30,6 +35,15 @@ app.get("/api/articles/:id", function(req, res, next){
 
 app.get("/playground", function(req, res){
     res.render("playground");
+});
+
+app.post("/playground/submit", function(req, res){
+    var requestOptions = {
+        text : req.body.Text,
+        preciseSearch : req.body.PreciseSearch,
+        optionsDropDown: req.body.OptionsDropDown
+    };
+    res.send(JSON.stringify(requestOptions));
 });
 
 app.get("/testsound", function(req, res){

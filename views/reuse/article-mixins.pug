@@ -2,6 +2,9 @@ mixin article(id, title, content)
     .panel.panel-default
         .panel-heading
             a(href="/articles/" + id) #{title}
+                .pull-right
+                    audio(controls)
+                        source(src="/testsound" type="audio/mpeg")
         .panel-body #{content}
 
 mixin full_article(title, content)
