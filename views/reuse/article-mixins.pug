@@ -7,13 +7,13 @@ mixin article(id, title, content)
                         source(src="/testsound" type="audio/mpeg")
         .panel-body #{content}
 
-mixin full_article(title, content)
+mixin full_article(title, content, soundFile)
     .panel.panel-default
         .panel-heading
             h1 #{title}
         .panel-body
             h5 Text 2 Music
             audio(controls)
-                source(src="/testsound" type="audio/mpeg")
+                source(src=soundFile type="audio/wav")
             .padder
             p #{content}

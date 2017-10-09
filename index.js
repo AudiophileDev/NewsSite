@@ -36,6 +36,12 @@ app.get("/api/articles/:id", function(req, res, next){
     res.send(article);
 });
 
+app.get("/SoundFiles/:fileName", function(req, res){
+    console.log("Sending sound file...");
+    let fileName = req.params.fileName;
+    res.sendFile(__dirname + "/SoundFiles/" + fileName);
+});
+
 app.get("/playground", function(req, res){
     res.render("playground");
 });
@@ -46,12 +52,13 @@ app.post("/playground/submit", function(req, res){
         if(error !== null){
             return res.send("Error occurred creating sound file: " + error);
         }
-        return res.send("Created sound file: " + pathToSoundFile);
+        //return res.send("Created sound file: " + pathToSoundFile);
+        res.render("playgroundPlayer", {
+            title: requestOptions.title,
+            text: requestOptions.text,
+            pathToSoundFile: "/" + pathToSoundFile
+        })
     });
-});
-
-app.get("/testsound", function(req, res){
-    res.sendFile(__dirname + "/mp3/test.mp3");
 });
 
 app.use(function(req, res){
