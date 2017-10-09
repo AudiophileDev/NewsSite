@@ -31,7 +31,7 @@ class ContentHandler{
             articles.push({
                 id: this._articleJSON[i].id,
                 title: this._articleJSON[i].title,
-                content: this._articleJSON[i].content.slice(0, 150) + "..."
+                content: this._articleJSON[i].content.slice(0, 250) + "..."
             })
         }
         return articles;
