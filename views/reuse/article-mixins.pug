@@ -2,18 +2,26 @@ mixin article(id, title, content)
     .panel.panel-default
         .panel-heading
             a(href="/articles/" + id) #{title}
-                .pull-right
-                    audio(controls)
-                        source(src="/testsound" type="audio/mpeg")
+            .pull-right
+                form(action="/playground/submit" method="post")
+                    input.form-control(type="hidden" id="title" name="Title" value={title}.title)
+                    textarea(style="display:none" id="Text" class="form-control" rows="10" name="Text") #{content}
+                    button.btn.btn-default(type="submit" value="submit") Listen to T2M
+
         .panel-body #{content}
 
 mixin full_article(title, content, soundFile)
     .panel.panel-default
         .panel-heading
             h1 #{title}
+            if !soundFile
+                form(action="/playground/submit" method="post")
+                    input.form-control(type="hidden" id="title" name="Title" value={title}.title)
+                    textarea(style="display:none" id="Text" class="form-control" rows="10" name="Text") #{content}
+                    button.btn.btn-default(type="submit" value="submit") Listen to T2M
         .panel-body
-            h5 Text 2 Music
-            audio(controls)
-                source(src=soundFile type="audio/wav")
+            if soundFile
+                audio(controls autoplay)
+                    source(src=soundFile type="audio/wav")
             .padder
             p #{content}
