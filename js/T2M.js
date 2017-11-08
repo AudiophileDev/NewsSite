@@ -11,7 +11,8 @@ class T2M{
             title: body.Title,
             text: body.Text,
             preciseSearch: body.PreciseSearch,
-            optionsDropDown: body.OptionsDropDown
+            noEffects: body.NoEffects,
+            ensembleDropDown: body.EnsembleDropDown
         };
     }
 
@@ -46,17 +47,27 @@ class T2M{
     }
 
     _executeT2M(pathToTextFile, requestOptions, callback){
-        //articleFile outputFile -db databaseFile -[output] [mp3 wav midi play ] -[precise] -db databaseFile
+        // <articlefile> <outputfile> <databasefile> [-o  {mp3 | wav | midi | play}] [-i {brass | saxs | piano | strings | accStrings | woodwinds | mwoodwinds | percussion | Instrumental | keyboards | birdtweet} [-p]
+        //[-noeffects]
         let callString =
             pathToTextFile.replace(/ /g,'') + " " +
             "SoundFiles/" + requestOptions.title.replace(/ /g,'') + ".wav" + " " +
-            "-output wav" + " " +
-            "-db T2M/wordsDB.csv" + " ";
-        console.log(callString);
+            "T2M/wordsDB.csv" + " " +
+            "-o wav";
 
-        if(requestOptions.preciseSearch){
-            callback = callback + "-precise";
+        if(requestOptions.ensembleDropDown !== undefined){
+            callString += " -i" + " " + requestOptions.ensembleDropDown.toLowerCase();
         }
+
+        if(requestOptions.preciseSearch !== undefined){
+            callString += " -p"
+        }
+
+        if(requestOptions.noEffects !== undefined){
+            callString += " -noeffects"
+        }
+
+        console.log(callString);
 
         let child = exec("java -jar T2M/t2m.jar " + callString, function (error, stdout, stderr){
             console.log('stdout: ' + stdout);

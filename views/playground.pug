@@ -7,19 +7,51 @@ block content
             input.form-control(type="text" id="title" name="Title")
         .form-group
             label(for="Text") Text:
-            textarea(id="Text" class="form-control" rows="10" name="Text")
+            textarea(id="Text" class="form-control" rows="10" name="Text" oninput="checkLength()")
 
         label(for="SingleSelectOptions") Options:
         .from-group(id="SingleSelectOptions")
             label(class="checkbox-inline" title="Music generation may take a while longer, but the result will be more accurate")
                 input(type="checkbox" value="PreciseSearch" name="PreciseSearch")
                 |Precise Search
+            label(class="checkbox-inline" title="")
+                input(type="checkbox" value="NoEffects" name="NoEffects")
+                | No Effects
 
         .from-group
-            label(for="OptionsDropDown") Sound Character:
-            select(id="OptionsDropDown" class="form-control" name="OptionsDropDown")
-                option Guitar
+            label(for="EnsembleDropDown") Ensemble:
+            select(id="EnsembleDropDown" class="form-control" name="EnsembleDropDown")
                 option Piano
-                option Triangle
+                option Brass
+                option Saxs
+                option Strings
+                option accStrings
+                option Woodwinds
+                option mWoodwinds
+                option Percussion
+                option Instrumental
+                option Keyboards
+                option Birdtweet
 
-        button.btn.btn-default(type="submit" value="submit") Submit
+
+        button.btn.btn-default(type="submit" value="submit" id="submitbutton" style="display: none") Submit
+
+    script.
+        function checkLength() {
+            var submitButton = document.getElementById("submitbutton");
+
+            var textarea = document.getElementById("Text").value;
+            textarea = textarea.replace(/(^\s*)|(\s*$)/gi, "");
+            textarea = textarea.replace(/[ ]{2,}/gi, " ");
+            textarea = textarea.replace(/\n /, "\n");
+
+            var wordcount = textarea.split(' ').length;
+
+            if(wordcount > 50) {
+                if (submitButton.style.display === "none") {
+                    submitButton.style.display = "block";
+                }
+            }else{
+                submitButton.style.display = "none";
+            }
+        }
